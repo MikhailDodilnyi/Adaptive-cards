@@ -1,0 +1,19 @@
+.btn {
+	transition: $transition;
+	display: inline-block;
+	text-transform: uppercase;
+	padding: 15px 25px;
+	border-radius: 5px;
+	margin: 0 auto;
+	border: 3px solid $white;
+	background-color: $gray;
+	color: $white;
+
+	&:hover a {
+		color: $card-title-bgc;
+	}
+}
+
+.bottom-btn {
+	text-align: center;
+}

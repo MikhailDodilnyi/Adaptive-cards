@@ -1,0 +1,56 @@
+.card {
+    position: relative;
+    margin: 26px auto;
+    &:hover .box {
+        opacity: 1;
+    }
+
+    .box {
+        @extend %addabsolute;
+        opacity: 0;
+        background-color: $opacity-gray;
+        display: flex;
+        flex-direction: column;
+        transition: opacity $transition;
+    }
+
+    .plus {
+        flex-grow: 1;
+        position: relative;
+    }
+    
+    .plus::before,
+    .plus::after {
+        content: '';
+        position: absolute;
+        width: 20px;
+        height: 4px;
+        background-color: $white;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .plus::before {
+        width: 20px;
+        height: 4px;
+    }
+
+    .plus::after{
+        width: 4px;
+        height: 20px;
+    }
+}
+
+.card-image {
+    display: block;
+	width: 100%;
+}
+
+.card-title {
+    margin: 0;
+    padding: 15px;
+    background-color: $card-title-bgc;
+    color: $white;
+    text-transform: uppercase;
+}

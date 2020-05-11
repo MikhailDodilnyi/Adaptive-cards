@@ -1,0 +1,124 @@
+$breakpoints: (
+	'xs-phone': 480px,
+	'phone': 576px,
+	'tablet': 768px,
+	'desktop': 1024px,
+	'widescreen': 1200px
+);
+
+// keywords
+$media-expressions: (
+	'screen': 'screen',
+	'print': 'print',
+	'handheld': 'handheld',
+	'landscape': '(orientation: landscape)',
+	'portrait': '(orientation: portrait)',
+	'retina2x': '(-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi)',
+	'retina3x': '(-webkit-min-device-pixel-ratio: 2.5), (min-resolution: 240dpi)'
+);
+
+// ligatured operators ≥ ≤
+
+@import 'components/normalize';
+
+// Базовые переменные  (изменяем от макета к макету)
+@import 'components/variables';
+
+// Медиазапросы НЕ ТРОГАЕМ
+@import 'components/include-media';
+
+// Базовые миксины  (изменяем от макета к макету)
+@import 'components/mixins';
+
+// Базовые стили для форм НЕ ТРОГАЕМ
+@import 'components/form';
+
+// Базовые стили для типографии (изменяем от макета к макету)
+@import 'components/base';
+
+// Стили для грида (изменяем от макета к макету)
+@import 'components/grid';
+
+// Стили для кнопок (изменяем от макета к макету)
+@import 'components/button';
+
+// Стили для компоненты nav (изменяем от макета к макету)
+@import 'components/nav';
+
+// Стили для компоненты card (изменяем от макета к макету)
+@import 'components/card';
+
+// Сюда пишем общие стили для проекта (изменяем от макета к макету)
+@import 'layout/common';
+
+// Сюда пишем стили для хедера в проекта (изменяем от макета к макету)
+@import 'layout/header';
+
+// Сюда пишем стили для футера в проекта (изменяем от макета к макету)
+@import 'layout/footer';
+
+
+.border {
+	@include media ('>=phone') {
+		text-align: left;
+	}
+
+	@include media ('>=desktop') {
+		border-left: 10px solid $light-gray;
+		padding: 0;
+		margin-left: 20px;
+	}
+
+	.head-text {
+		@include media ('>=phone') {
+			margin-left: 15px;
+		}
+	
+		@include media ('>=tablet') {
+			border-bottom: $border;
+		}
+	
+		@include media ('>=desktop') {
+			border-bottom: none;
+		}
+	
+		@include media ('>=widescreen') {
+			margin-left: 20px;
+		}
+	}
+}
+
+.card-box {
+	display: flex;
+	flex-wrap: wrap;
+
+	.card {
+		@include media('>=phone') {
+			display: flex;
+			flex-wrap: wrap;
+			width: calc(50% - 30px);
+			margin: 22px 15px;
+		}
+	
+		@include media ('>=tablet') {
+			width: calc(33.33% - 30px);
+		}
+	
+		@include media('>=desktop') {
+			width: calc(33.33% - 40px);
+			margin: 20px;
+		}
+
+		.box {
+			@include media ('>=phone') {
+				margin: 0;
+			}
+		}
+	}
+}
+
+h1 {
+	@include media ('>=desktop') {
+		font-size: $h1-font-size;
+	}
+}
