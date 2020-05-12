@@ -1,8 +1,10 @@
 .card {
     position: relative;
     margin: 26px auto;
-    &:hover .box {
-        opacity: 1;
+    &:hover {
+       .box {
+           opacity: 1;
+       }
     }
 
     .box {
@@ -17,10 +19,9 @@
     .plus {
         flex-grow: 1;
         position: relative;
-    }
-    
-    .plus::before,
-    .plus::after {
+
+        &::before,
+        &::after {
         content: '';
         position: absolute;
         width: 20px;
@@ -29,16 +30,17 @@
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
-    }
+        }
 
-    .plus::before {
-        width: 20px;
-        height: 4px;
-    }
-
-    .plus::after{
-        width: 4px;
-        height: 20px;
+        &::before {
+            width: 20px;
+            height: 4px;
+        }
+    
+        &::after{
+            width: 4px;
+            height: 20px;
+        }
     }
 }
 

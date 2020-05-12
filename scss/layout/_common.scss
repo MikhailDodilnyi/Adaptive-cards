@@ -51,3 +51,68 @@
 	text-transform: uppercase;
 	display: inline-block;
 }
+
+.border {
+	@include media ('>=phone') {
+		text-align: left;
+	}
+
+	@include media ('>=desktop') {
+		border-left: 10px solid $light-gray;
+		padding: 0;
+		margin-left: 20px;
+	}
+
+	.head-text {
+		@include media ('>=phone') {
+			margin-left: 15px;
+		}
+	
+		@include media ('>=tablet') {
+			border-bottom: $border;
+		}
+	
+		@include media ('>=desktop') {
+			border-bottom: none;
+		}
+	
+		@include media ('>=widescreen') {
+			margin-left: 20px;
+		}
+	}
+}
+
+.card-box {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.card {
+	@include media('>=phone') {
+		display: flex;
+		flex-wrap: wrap;
+		width: calc(50% - 30px);
+		margin: 22px 15px;
+	}
+
+	@include media ('>=tablet') {
+		width: calc(33.33% - 30px);
+	}
+
+	@include media('>=desktop') {
+		width: calc(33.33% - 40px);
+		margin: 20px;
+	}
+
+	.box {
+		@include media ('>=phone') {
+			margin: 0;
+		}
+	}
+}
+
+h1 {
+	@include media ('>=desktop') {
+		font-size: $h1-font-size;
+	}
+}
